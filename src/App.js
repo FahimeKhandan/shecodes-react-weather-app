@@ -15,7 +15,7 @@ function App() {
   let [wind, setWind] = useState(null);
   let [icon, setIcon] = useState(null);
   let [sunrise, setSunrise] = useState(null);
-  let [sunset, setSet] = useState(null);
+  let [sunset, setSunset] = useState(null);
   let [tempMax, setTempMax] = useState(null);
   let [tempMin, setTempMin] = useState(null);
 
@@ -42,6 +42,7 @@ function App() {
     setDescription(response.data.weather[0].description);
     setIcon(response.data.weather[0].icon);
     setSunrise(response.data.sys.sunrise);
+    setSunset(response.data.sys.sunset);
     setTempMax(response.data.main.temp_max);
     setTempMin(response.data.main.temp_min);
   }
