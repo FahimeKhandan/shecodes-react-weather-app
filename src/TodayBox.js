@@ -1,17 +1,17 @@
 export default function TodayBox(props) {
-  // const days = [
-  //   "Sunday",
-  //   "Monday",
-  //   "Tuesday",
-  //   "Wednesday",
-  //   "Thursday",
-  //   "Friday",
-  //   "Saturday",
-  // ];
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
   const now = new Date();
 
-  // const getToday = days[now.getDay()];
+  const getToday = days[now.getDay()];
   const hour = now.getHours();
   const minutes = now.getMinutes();
 
@@ -31,17 +31,17 @@ export default function TodayBox(props) {
         <h3>
           <span id="current-temperature">{Math.round(props.current)}</span>
           <sup>
-            <a href="#" id="celicious">
+            <p class="d-inline">
               °C
-            </a>
+            </p>
             |
-            <a href="#" id="fahrenheit">
+            <p class="d-inline">
               °F
-            </a>
+            </p>
           </sup>
         </h3>
         <div className="desc-2">
-          <span id="today">{props.day} </span>
+          <span id="today">{getToday} </span>
           <span id="time">
             {hour}:{minutes}
           </span>
