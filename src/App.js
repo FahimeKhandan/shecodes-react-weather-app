@@ -63,9 +63,8 @@ function App() {
         <TodayBox
           current={temp}
           description={description}
-          hour="12:00"
-          city={city}
           day="sunday"
+          city={city}
           icon={icon}
         />
         <TodayDetails

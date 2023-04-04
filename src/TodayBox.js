@@ -1,17 +1,17 @@
 export default function TodayBox(props) {
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  // const days = [
+  //   "Sunday",
+  //   "Monday",
+  //   "Tuesday",
+  //   "Wednesday",
+  //   "Thursday",
+  //   "Friday",
+  //   "Saturday",
+  // ];
 
   const now = new Date();
 
-  const getToday = days[now.getDay()];
+  // const getToday = days[now.getDay()];
   const hour = now.getHours();
   const minutes = now.getMinutes();
 
