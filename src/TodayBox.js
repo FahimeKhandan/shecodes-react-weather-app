@@ -1,3 +1,5 @@
+import TempUnit from "./TempUnit";
+
 export default function TodayBox(props) {
   const days = [
     "Sunday",
@@ -28,18 +30,8 @@ export default function TodayBox(props) {
         <div className="desc-2" id="current-city">
           {props.city}
         </div>
-        <h3>
-          <span id="current-temperature">{Math.round(props.current)}</span>
-          <sup>
-            <p class="d-inline">
-              °C
-            </p>
-            |
-            <p class="d-inline">
-              °F
-            </p>
-          </sup>
-        </h3>
+        <TempUnit current={props.current}/>
+        
         <div className="desc-2">
           <span id="today">{getToday} </span>
           <span id="time">
