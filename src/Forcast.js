@@ -11,9 +11,10 @@ export default function Forcast(props) {
     setDailyAray(result);
     setLoaded(true);
   }
-useEffect(()=>{
-  setLoaded(false)
-},[props.lat || props.lon])
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.lat]);
 
   if (loaded && dailyArr) {
     return (
@@ -30,13 +31,13 @@ useEffect(()=>{
               />
             );
           }
+          return null
         })}
       </div>
     );
   } else {
     const newApiKey = "a43564c91a6c605aeb564c9ed02e3858";
     const apiUrlFprcast = `https://api.openweathermap.org/data/3.0/onecall?lat=${props.lat}&lon=${props.lon}&appid=${newApiKey}`;
-
 
     axios.get(apiUrlFprcast).then(updateForecast);
     return null;
