@@ -17,8 +17,8 @@ export default function TempUnit(props) {
       <h3>
         <span id="current-temperature">{Math.round(props.current)}</span>
         <sup>
-          <p class="d-inline">°C</p>|
-          <a href="/" onClick={(event)=>convertUnit(event, 'fahrenheit')} class="d-inline">
+          <p className="d-inline">°C</p>|
+          <a href="/" onClick={(event)=>convertUnit(event, 'fahrenheit')} className="d-inline">
             °F
           </a>
         </sup>
@@ -30,10 +30,10 @@ export default function TempUnit(props) {
         <h3>
           <span id="current-temperature">{Math.round(fahrenheit())}</span>
           <sup>
-            <a href="/" onClick={(event)=>convertUnit(event, 'celsius')} class="d-inline">
+            <a href="/" onClick={(event)=>convertUnit(event, 'celsius')} className="d-inline">
               °C
             </a>|
-            <p class="d-inline">°F</p>
+            <p className="d-inline">°F</p>
           </sup>
         </h3>
       );

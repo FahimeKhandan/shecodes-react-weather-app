@@ -17,6 +17,8 @@ function App() {
   let [sunset, setSunset] = useState(null);
   let [tempMax, setTempMax] = useState(null);
   let [tempMin, setTempMin] = useState(null);
+  let [lat, setLat] = useState(null);
+  let [lon, setlon] = useState(null);
 
   const apiKey = "9c74030f9ca50197fb266b914f10d3a4";
 
@@ -44,6 +46,8 @@ function App() {
     setSunset(response.data.sys.sunset);
     setTempMax(response.data.main.temp_max);
     setTempMin(response.data.main.temp_min);
+    setLat(response.data.coord.lat);
+    setlon(response.data.coord.lon);
   }
 
   function updateWeather(cityName) {
@@ -74,7 +78,11 @@ function App() {
           tempMax={tempMax}
           tempMin={tempMin}
         />
-        <Forcast />
+        {lat && (
+          <section className="forecast">
+            <Forcast lat={lat} lon={lon} />
+          </section>
+        )}
       </div>
       <div className="text-center">
         <a href="https://github.com/FahimeKhandan/shecodes-react-weather-app">
